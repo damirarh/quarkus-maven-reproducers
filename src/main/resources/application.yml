@@ -1,2 +1,20 @@
-greeting:
-  message: "hello"
+quarkus:
+  log:
+    console:
+      format: '%d{yyyy-MM-dd HH:mm:ss,SSS} MDC:%X %-5p [%c{3.}] (%t) %s%e%n'
+    category:
+      "com.github.renegrob":
+        level: DEBUG
+    file:
+      enable: true
+      path: ./target/quarkus.log
+      format: '%d{yyyy-MM-dd HH:mm:ss,SSS} MDC:%X %-5p [%c{3.}] (%t) %s%e%n'
+  vertx:
+    max-event-loop-execute-time: 0.2s
+    warning-exception-time: 0.1s
+  scheduler:
+    enabled: false
+#mp:
+#  context:
+#    ThreadContext:
+#      propagated: correlationId
